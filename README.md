@@ -8,6 +8,6 @@ Docker images for the OSINT project
     docker build -t zookeeper "github.com/luxeria/osint_docker.git#master:zookeeper"
     docker build -t kafka "github.com/luxeria/osint_docker.git#master:kafka"
 
-    docker run --net osint_net --ip 172.123.0.10 --detach zookeeper
-    docker run --net osint_net --ip 172.123.0.20 --detach kafka
+    docker run --net osint_net --ip 172.123.0.10 -p 0.0.0.0:2181:2181 --detach zookeeper
+    docker run --net osint_net --ip 172.123.0.20 -p 0.0.0.0:9092:9092 --detach kafka
 
